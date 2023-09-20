@@ -19,7 +19,7 @@
         #header
         {
             width : 100%;
-            display: flex;
+            display: flex; /*가로정렬*/
         }
         #header .logo
         {
@@ -29,7 +29,7 @@
         }
         #header .nav
         {
-            width : 80%;
+            width : 80%; /*부모박스를 기준으로 80%를 의미한다*/
             height : 100px;
             background-color : #e3e3e3;
         }
@@ -95,11 +95,14 @@
         </div>
         <div id="slider"></div>
         <div id="contents">
+            <!--각 영역의 독립적인 의미를 가졌다면 section태그를 사용할 수 있다-->
             <section class="content1"></section>
             <section class="content2"></section>
             <section class="content3"></section>
         </div>
         <div id="footer">
+            <!--독립적인 영역을 나타내는 부분이 아니기 때문에 div태그를 사용한다-->
+            <!--시멘틱 태그는 해당 영역에 적당한 의미 부여된 태그가 있으면 적절히 사용가능하다-->
             <div class="footer1"></div>
             <div class="footer2"></div>
             <div class="footer3"></div>
