@@ -14,12 +14,14 @@
         #wrap
         {
             width : 1200px;
-            margin: 0 auto;
+            margin: 0 auto; /*블럭구조를 가운데 정렬하기 위한 속성 */
+            /* margin : 박스의 바깥쪽 여백을 설정하기 위함 && 0은 위아래, auto는 좌우*/
         }
         #header
         {
             width : 100%;
-            display : flex;
+            display : flex; /*가로정렬*/
+            /*기존에는 float방식을 사용하였지만 현재는 flex를 자주 사용함*/
         }
         #header .logo
         {
