@@ -48,6 +48,18 @@
             width : 100%;
             height : 400px;
             background-color: #d9d9d9;
+            position: relative;
+            /* 부모박스가 기준이므로 relative 설정함. 기준점이 된다. */
+        }
+        #slider .link
+        {
+            position: absolute;
+            /* 내가 원하는 위치로 만들기 */
+            right: 0;
+            top: 0;
+            width : 100px;
+            height : 300px;
+            background-color: #9d9d9d;
         }
         #banner
         {
@@ -64,10 +76,26 @@
         #footer
         {
             width : 100%;
-            height : 100px;
-            background-color: #d9d9d9;
+            display: flex;
         }
-
+        #footer .footer1
+        {
+            width : 20%;
+            height : 100px;
+            background-color: #bcbcbc;
+        }
+        #footer .footer2
+        {
+            width : 60%;
+            height : 100px;
+            background-color: #b1b1b1;
+        }
+        #footer .footer3
+        {
+            width : 20%;
+            height : 100px;
+            background-color: #a3a3a3;
+        }
     </style>
 </head>
 <body>
@@ -77,11 +105,17 @@
             <nav class="nav"></nav>
         </aside>
         <main id="main">
-            <article id="slider"></article>
+            <article id="slider">
+                <div class="link"></div>
+            </article>
             <article id="banner"></article>
             <section id="contents"></section>
         </main>
-        <footer id="footer"></footer>
+        <footer id="footer">
+            <div class="footer1"></div>
+            <div class="footer2"></div>
+            <div class="footer3"></div>
+        </footer>
     </div>
 </body>
 </html>
