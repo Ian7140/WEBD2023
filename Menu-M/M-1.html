@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
     <title>웹디자인기능사 메뉴 M-1</title>
     <style>
         *
         {
             margin : 0;
             padding : 0;
+            font-family: 'GmarketSans';
         }
         li{
             list-style: none;
@@ -34,7 +36,7 @@
             height : 100px;
             background-color: #efefef;
         }
-        header .nav
+        #header .nav
         {
             width : 80%;
             background-color: #e3e3e3;
@@ -90,6 +92,52 @@
             width : 20%;
             height : 100px;
             background-color: #9d9d9d;
+        }
+        .nav>ul
+        {
+            display: flex;
+            justify-content: right;
+            margin-top: 30px;
+        }
+        .nav>ul>li{
+            position: relative;
+        }
+        .nav>ul>li>a{
+            display: inline-block;
+            padding: 10px 50px;
+            background-color: #b0b0b0;
+        }
+        .nav>ul>li>a:hover
+        {
+            background-color: #696969;
+        }
+        .nav>ul>li>ul{
+            position: absolute;
+            left: 0px;
+            top: 38px;
+            background-color: #c7c7c7;
+            width : 100%;
+            text-align: center;
+            display: none;
+        }
+        .nav>ul>li>ul>li>a
+        {
+            display: inline-block;
+            padding : 10px;
+            background-color: #c1c1c1;
+            width : 100%;
+            box-sizing: border-box;
+        }
+        .nav>ul>li>ul>li>a:hover
+        {
+            background-color: #8f8f8f;
+        }
+        .nav>ul>li>ul
+        {
+            display: block;
+            height : 0;
+            overflow: hidden;
+            transition: all 600ms;
         }
     </style>
 </head>
@@ -154,5 +202,24 @@
         </div>
 
     </div>
+    <script>
+        window.onload = function()
+        {
+            let navList = document.querySelectorAll(".nav>ul>li");
+
+
+            navList.forEach(function(navItem){
+                navItem.addEventListener("mouseover", function(){
+                    this.querySelector(".submenu").style.height = "155px";
+                });
+            });
+
+            navList.forEach(function(navItem){
+                navItem.addEventListener("mouseout", function(){
+                    this.querySelector(".submenu").style.height = "0px";
+                });
+            });
+        }
+    </script>
 </body>
 </html>
