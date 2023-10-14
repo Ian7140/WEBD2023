@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>웹디자인기능사 메뉴 M-2</title>
     <style>
@@ -10,6 +10,7 @@
         {
             margin : 0;
             padding : 0;
+            font-family: 'GmarketSans';
         }
         li
         {
@@ -83,7 +84,7 @@
         }
         #footer .footer2
         {
-            width : 20%;
+            width : 60%;
             height : 100px;
             background-color: #a3a3a3;
         }
@@ -106,6 +107,41 @@
         .nav>ul>li>a
         {
             display: inline-block;
+            padding : 10px 50px;
+            background-color: #b0b0b0;
+        }
+        .nav>ul>li>a:hover
+        {
+            background-color: #696969;
+        }
+        .nav>ul>li>ul
+        {
+            position: absolute;
+            left: 0;
+            top: 38px;
+            width : 100%;
+            text-align: center;
+            display: none;
+        }
+        .nav>ul>li>ul>li>a
+        {
+            display: inline-block;
+            padding : 10px;
+            background-color: #c1c1c1;
+            width : 100%;
+            box-sizing : border-box;
+        }
+        .nav>ul>li>ul>li>a:hover
+        {
+            background-color: #8f8f8f;
+        }
+        .nav>ul>li>ul 
+        /* 자바스크립트 CSS */
+        {
+            display: block;
+            height : 0;
+            overflow: hidden;
+            transition: all 600ms;
         }
     </style>
 </head>
@@ -169,5 +205,21 @@
             <div class="footer3"></div>
         </div>
     </div>
+    <script>
+        window.onload = function(){
+            let navList = document.querySelector(".nav>ul");
+            navList.addEventListener("mouseover",function(){
+                navList.querySelectorAll(".submenu").forEach(sub => {
+                    sub.style.height = "155px";
+                });
+            });
+
+            navList.addEventListener("mouseout",function(){
+                navList.querySelectorAll(".submenu").forEach(sub => {
+                    sub.style.height = "0px";
+                });
+            });
+        }
+    </script>
 </body>
 </html>
