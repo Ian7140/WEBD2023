@@ -5,6 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>웹디자인기능사 메뉴 M-5</title>
+    <script>
+        window.onload = function()
+        {
+            let navList = document.querySelectorAll(".nav>ul>li");
+
+            navList.forEach(function(nav)
+            {
+                nav.querySelector("ul").style.display = "block";
+                nav.querySelector("ul").style.display = "0";
+                nav.querySelector("ul").style.display = "hidden";
+                nav.querySelector("ul").style.display = "height 400ms";
+            })
+            navList.forEach(function(navItem){
+
+                navItem.addEventListener("mouseover",function()
+                {
+                    this.querySelector(".submenu").style.height = "155px";
+                });
+
+                navItem.addEventListener("mouseout",function()
+                {
+                    this.querySelector(".submenu").style.height = "0px";
+                });
+            });
+        }
+    </script>
     <style>
         *
         {
@@ -108,13 +134,85 @@
             height : 120px;
             background-color: #929292;
         }
+        .nav>ul>li
+        {
+            position: relative;
+        }
+        .nav>ul>li>a
+        {
+            padding: 10px;
+            display: block;
+            text-align: center;
+            background-color: #ccc;
+        }
+        .nav>ul>li>a:hover
+        {
+            background-color: #dbdbdb;
+        }
+        .nav>ul>li>ul
+        {
+            position: absolute;
+            right: -200px;
+            top: 0;
+            width: 200px;
+            background-color: #6d6d6d;
+            display: none;
+        }
+        .nav>ul>li>ul>li>a
+        {
+            padding: 10px;
+            display: block;
+        }
+        .nav>ul>li>ul>li>a:hover
+        {
+            background-color: #c0c0c0;
+        }
     </style>
 </head>
 <body>
     <div id="wrap">
         <aside id="aside">
             <h1></h1>
-            <nav></nav>
+            <nav class="nav">
+                <ul>
+                    <li>
+                        <a href="#">메뉴1</a>
+                        <ul class="submenu">
+                            <li><a href="#">서브메뉴 1-1</a></li>
+                            <li><a href="#">서브메뉴 1-2</a></li>
+                            <li><a href="#">서브메뉴 1-3</a></li>
+                            <li><a href="#">서브메뉴 1-4</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">메뉴2</a>
+                        <ul class="submenu">
+                            <li><a href="#">서브메뉴 2-1</a></li>
+                            <li><a href="#">서브메뉴 2-2</a></li>
+                            <li><a href="#">서브메뉴 2-3</a></li>
+                            <li><a href="#">서브메뉴 2-4</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">메뉴3</a>
+                        <ul class="submenu">
+                            <li><a href="#">서브메뉴 3-1</a></li>
+                            <li><a href="#">서브메뉴 3-2</a></li>
+                            <li><a href="#">서브메뉴 3-3</a></li>
+                            <li><a href="#">서브메뉴 3-4</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">메뉴4</a>
+                        <ul class="submenu">
+                            <li><a href="#">서브메뉴 4-1</a></li>
+                            <li><a href="#">서브메뉴 4-2</a></li>
+                            <li><a href="#">서브메뉴 4-3</a></li>
+                            <li><a href="#">서브메뉴 4-4</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
         </aside>
 
         <main id="main">
